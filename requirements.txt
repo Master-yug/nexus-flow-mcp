@@ -1,0 +1,6 @@
+# Core dependencies
+requests>=2.31.0          
+python-dotenv>=1.0.0      
+
+# Optional but recommended
+colorama>=0.4.6            
