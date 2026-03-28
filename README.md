@@ -50,11 +50,11 @@ __*The Bridge Between Intent and Action: Remote-control your physical workstatio
 3. Active Monitoring: Polls database every 10 seconds
 4. Status Detection: Looks for tasks with "Focusing" status
 5. Environment Launch: When a focusing task is detected:
-  - Cleans up previous session (closes browsers, manages VS Code)
-  - Opens configured URL in browser
-  - Opens folder in Windows Explorer
-  - Opens VS Code in that folder
-  - Starts time tracking session
+   - Cleans up previous session (closes browsers, manages VS Code)
+   - Opens configured URL in browser
+   - Opens folder in Windows Explorer
+   - Opens VS Code in that folder
+   - Starts time tracking session
 6. Continuous Sync: Every 5 minutes, updates "Last Synced" timestamp
 7.Time Tracking: When task changes from "Focusing", calculates and saves time spent
 ## Advanced Configuration
