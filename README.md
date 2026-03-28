@@ -44,6 +44,19 @@ __*The Bridge Between Intent and Action: Remote-control your physical workstatio
       Go to your Notion "Command Center" and set a project to Focusing.
 3. Watch the Magic:
    NexusFlow will detect the change, perform a system cleanup, and launch your environment automatically.
+##What does the code do when you hit python notion_query.py
+1. Connection Test: Verifies Notion API access
+2. Configuration Display: Shows cleanup and time tracking settings
+3. Active Monitoring: Polls database every 10 seconds
+4. Status Detection: Looks for tasks with "Focusing" status
+5. Environment Launch: When a focusing task is detected:
+  - Cleans up previous session (closes browsers, manages VS Code)
+  - Opens configured URL in browser
+  - Opens folder in Windows Explorer
+  - Opens VS Code in that folder
+  - Starts time tracking session
+6. Continuous Sync: Every 5 minutes, updates "Last Synced" timestamp
+7.Time Tracking: When task changes from "Focusing", calculates and saves time spent
 ## Advanced Configuration
 You can customize the automation behavior directly in the script:
   - POLL_INTERVAL: Set the frequency of Notion scans (Default: 10s).
