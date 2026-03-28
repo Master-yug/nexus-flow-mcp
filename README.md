@@ -1,7 +1,7 @@
 # NexusFlow MCP
 __*The Bridge Between Intent and Action: Remote-control your physical workstation directly from Notion.*__
 
-## Key Project Feature Implementations
+## Key Project Feature Implementations SO FAR
 - **Real-time Monitoring:** Polls your Notion database every 10 seconds for status changes
 - **Smart Environment Launch:** Automatically opens browser, folder, and VS Code when a task is set to "Focusing"
 - **Two-Way Time Tracking:** Automatically tracks and syncs time spent on each task back to Notion
@@ -57,6 +57,84 @@ __*The Bridge Between Intent and Action: Remote-control your physical workstatio
    - Starts time tracking session
 6. Continuous Sync: Every 5 minutes, updates "Last Synced" timestamp
 7.Time Tracking: When task changes from "Focusing", calculates and saves time spent
+## What does the output look like
+ON STARTUP:
+```
+============================================================
+🔮 NOTION CONTEXT SWITCHER - BACKGROUND WATCHER
+   with Two-Way Time Tracking
+============================================================
+Testing connection to Notion API...
+✅ Connected to Notion API
+
+🧹 Cleanup Configuration:
+  ENABLE_CLEANUP: True
+  CLOSE_BROWSER: True
+  CLOSE_VSCODE: True
+  USE_REUSE_WINDOW: True
+  Browser targets: msedge.exe, chrome.exe, firefox.exe
+
+⏱️  Time Tracking Configuration:
+  Heartbeat Interval: 5 minutes
+  Tracks time in 'Time Spent' column
+  Updates 'Last Synced' every heartbeat
+
+🔍 BACKGROUND WATCHER ACTIVE
+📊 Monitoring database: 3277e5f14cae806bba52d3c246fdfcdb
+⏱️  Polling every 10 seconds
+💓 Heartbeat every 5 minutes
+💡 Press Ctrl+C to stop
+------------------------------------------------------------
+[09:45:26] 🔎 Scanning... No active context
+
+```
+NEW TASK DETECTED
+```
+[09:45:55] 🎯 NEW FOCUSING TASK DETECTED: My Awesome Project
+[09:45:55]    ID: 3277e5f1-4cae-80dc-b7af-eb26f85cab40
+
+🧹 SYSTEM CLEANUP - Closing previous session...
+   Closing browser: msedge.exe
+   ✅ Browser closed: msedge.exe
+   ℹ️  Using VS Code --reuse-window (not closing instances)
+✅ Cleanup completed
+
+============================================================
+🚀 ENVIRONMENT MANAGER - Launching: My Awesome Project
+============================================================
+Status: Focusing
+Resources URL: https://github.com/myproject
+Folder Path: C:\Users\username\Projects\MyProject
+------------------------------------------------------------
+✅ Status is 'Focusing' - launching environment...
+
+🌐 Opening URL: https://github.com/myproject
+📂 Opening folder: C:\Users\username\Projects\MyProject
+💻 Opening VS Code in: C:\Users\username\Projects\MyProject
+   Using --reuse-window flag
+✅ VS Code opened successfully
+
+✅ Environment launch complete!
+🎯 Session started: 'My Awesome Project' at 09:45:55
+[09:45:55] ✅ Environment launched and session started
+```
+ACTIVE SESSION
+```
+[09:46:05] 🔄 Scanning... Environment is currently synced for: My Awesome Project
+   ⏱️  Current session: 0.2 minutes
+```
+HEARTBEAT
+```
+💓 HEARTBEAT: Updated 'Last Synced' for 'My Awesome Project'
+```
+SESSION END
+```
+[09:55:26] ℹ️  No 'Focusing' task. Ending session...
+
+⏱️  Ending session for 'My Awesome Project'...
+   Time spent: 9.5 minutes
+💾 TIME SYNC: Added 9.5 minutes to 'My Awesome Project' (Total: 9.5 minutes)
+```
 ## Advanced Configuration
 You can customize the automation behavior directly in the script:
   - POLL_INTERVAL: Set the frequency of Notion scans (Default: 10s).
