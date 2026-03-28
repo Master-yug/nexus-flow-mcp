@@ -44,7 +44,7 @@ __*The Bridge Between Intent and Action: Remote-control your physical workstatio
       Go to your Notion "Command Center" and set a project to Focusing.
 3. Watch the Magic:
    NexusFlow will detect the change, perform a system cleanup, and launch your environment automatically.
-##What does the code do when you hit python notion_query.py
+## What does the code do when you hit python notion_query.py
 1. Connection Test: Verifies Notion API access
 2. Configuration Display: Shows cleanup and time tracking settings
 3. Active Monitoring: Polls database every 10 seconds
