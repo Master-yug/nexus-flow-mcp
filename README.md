@@ -2,11 +2,15 @@
 __*The Bridge Between Intent and Action: Remote-control your physical workstation directly from Notion.*__
 
 ## Key Project Feature Implementations
-- **Real-Time Context Switching:** Instantly transition between "Code Mode," "Research," or "Design" by changing a single status dropdown in Notion.
-- **Smart System Cleanup:** Features a "Fresh Start" utility that gracefully closes previous browser sessions and VS Code instances before launching a new context to eliminate digital clutter.
-- **Intelligent Background Watcher:** Runs as a headless service, polling the Notion API every 10 seconds to detect "Intent Changes" without manual terminal interaction.
-- **VS Code Integration**: Automatically launches VS Code in the specific project directory, supporting the --reuse-window flag to keep your desktop organized.
-- **Multi-Platform Path Handling:** Supports environment variable expansion and absolute/relative pathing for project folders.
+- **Real-time Monitoring:** Polls your Notion database every 10 seconds for status changes
+- **Smart Environment Launch:** Automatically opens browser, folder, and VS Code when a task is set to "Focusing"
+- **Two-Way Time Tracking:** Automatically tracks and syncs time spent on each task back to Notion
+- **System Cleanup:** Closes previous browser sessions and manages VS Code windows before launching new environments
+- **Heartbeat System:** Updates "Last Synced" timestamp every 5 minutes to show the script is active
+- **State Tracking:** Prevents re-launching the same environment multiple times
+- **Multiple Browser Support:** Works with Chrome, Edge, Firefox, and more
+- **Graceful Shutdown:** Clean exit with Ctrl+C
+- **Rich Console Output:** Color-coded, timestamped messages with emoji indicators
 
 ## Installation
 1. Prerequisites
